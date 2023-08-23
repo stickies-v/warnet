@@ -2,7 +2,7 @@ import logging
 import docker
 import warnet
 
-BITCOIN_GRAPH_FILE = './graphs/basic3.graphml'
+BITCOIN_GRAPH_FILE = './templates/example.graphml'
 
 logging.basicConfig(level=logging.INFO)
 
