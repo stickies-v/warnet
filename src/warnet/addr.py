@@ -4,7 +4,7 @@ import ipaddress
 
 DEFAULT_SUBNET = "100.0.0.0/8"
 
-def generate_ip_addr(subnet):
+def generate_ipv4_addr(subnet):
     """
     Generate a valid random IPv4 address within the given subnet.
 

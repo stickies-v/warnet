@@ -1,7 +1,6 @@
 import os
 import sys
 import yaml
-import subprocess
 import logging
 from copy import deepcopy
 import networkx as nx
@@ -15,25 +14,6 @@ DEFAULT_CONF = "./templates/bitcoin.conf"
 NETWORK = 'regtest'
 
 
-def get_architecture():
-    """
-    Get the architecture of the machine.
-
-    :return: The architecture of the machine or None if an error occurred
-    """
-    try:
-        result = subprocess.run(['uname', '-m'], stdout=subprocess.PIPE)
-        arch = result.stdout.decode('utf-8').strip()
-        if arch == "arm64":
-            arch = "aarch64"
-        if arch is not None:
-            logging.info(f"Detected architecture: {arch}")
-        else:
-            raise Exception("Failed to detect architecture.")
-        return arch
-    except Exception as e:
-        logging.error(f"An error occurred: {e}")
-        return None
 
 
 def write_bitcoin_configs(graph):
